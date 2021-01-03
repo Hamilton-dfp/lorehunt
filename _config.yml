@@ -1,2 +1,10 @@
 title: Lore Hunt
 theme: jekyll-theme-minimal
+
+permalink: /news/:year-:month-:day/:title
+
+defaults:
+  - scope:
+      path: lore
+    values:
+      permalink: /lore/:title
