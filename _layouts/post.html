@@ -5,7 +5,9 @@ layout: default
 {% assign repo = site.github.public_repositories | where: "name", "lorehunt" | first %}
 
 <ul>
-	<li>{{ repo.name }}</li>
+	{% for commit in repo.commits %}
+	<li>{{ repo.name }}: {{ commit.commit_message }}</li>
+	{% endfor %}
 </ul>
 
 
