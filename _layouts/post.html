@@ -1,11 +1,14 @@
 ---
 layout: default
 ---
+
+{% assign repo = site.github.public_repositories | where "name", "lorehunt" | first %}
+
 <ul>
-{% for ro in site.github.public_repositories %}
-	<li>{{ ro.name }}</li>
-{% endfor %}
+	<li>{{ repo.name }}</li>
 </ul>
+
+
 
 <small>{{ page.date | date: "%-d %B %Y" }}</small>
 <h1>{{ page.title }}</h1>
