@@ -1,7 +1,9 @@
 <script>
-(function () {
-	var url = 'https://api.github.com/repos/Hamilton-DFP/lorehunt/commits?path=_posts/2021-01-03-Test.md',
-		xhr = new XMLHttpRequest();
+	let date
+
+	var url = 'https://api.github.com/repos/Hamilton-DFP/lorehunt/commits?path=_posts/2021-01-03-Test.md'
+	var xhr = new XMLHttpRequest();
+
 	xhr.open('GET', url);
 	xhr.send();
 	xhr.onreadystatechange = function () {
@@ -10,12 +12,31 @@
 
 		commits = JSON.parse(xhr.responseText);
 		if (commits && commits.length) {
-			console.log(commits)
+			date = commits[0].commit.author.date
 		}
 	};
-})();
+
+	function setHistory() {
+		if(xhr.readState !== 4)
+			xhr.onreadystatechange = setHistory
+		else {
+			if(xhr.status == 200) {
+				commits = JSON.parse(xhr.responseText);
+				if (commits && commits.length) {
+					date = commits[0].commit.author.date
+
+					var history = document.getElementById('history')
+					history.innerHTML = date 
+				}
+			}
+ 		}
+	}
 </script>
 
 <div id="history">
 test
 </div>
+
+<script>
+  
+</script>
