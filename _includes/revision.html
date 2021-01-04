@@ -1,0 +1,21 @@
+<script>
+(function () {
+	var url = 'https://api.github.com/repos/ryanjduffy/blog//commits?path=_posts/2016-01-08-including-git-history-in-a-jekyll-post.md',
+		xhr = new XMLHttpRequest();
+	xhr.open('GET', url);
+	xhr.send();
+	xhr.onreadystatechange = function () {
+		var commits;
+		if (xhr.readyState !== 4 || xhr.status !== 200) return;
+
+		commits = JSON.parse(xhr.responseText);
+		if (commits && commits.length) {
+			// create the DOM nodes
+		}
+	};
+})();
+</script>
+
+<div id="history">
+test
+</div>
