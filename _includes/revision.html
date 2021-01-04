@@ -16,6 +16,7 @@
 			commits = JSON.parse(xhr.responseText)
 			if(commits && commits.length) {
 				date = commits[0].commit.author.date
+				console.log(`date = ${date}`)
 			}	
 
 			if(callback)
