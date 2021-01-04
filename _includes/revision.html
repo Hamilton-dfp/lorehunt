@@ -25,7 +25,7 @@
 	}
 
 	function setHistory() {
-		if(xhr.readState == 4 && xhr.state == 200) {
+		if(xhr.readyState == 4 && xhr.state == 200) {
 			var history = document.getElementById('history')
 			history.innerHTML = date 
 		} else xhr.onreadystatechange = setDate(setHistory)
