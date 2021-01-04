@@ -1,7 +1,5 @@
-<div id="history">
-test
-</div>
-
+<small><b>Created: </b>{{ page.date | date: "%B %-d, %Y" }}</small><br>
+<small><b>Updated: </b></small><small id="history">...</small><br>
 <script>
 	const url = 'https://api.github.com/repos/Hamilton-DFP/lorehunt/commits?path=_posts/2021-01-03-Test.md'
 	const xhr = new XMLHttpRequest();
@@ -17,10 +15,10 @@ test
 
 			commits = JSON.parse(xhr.responseText)
 			if(commits && commits.length) {
-				const date = commits[0].commit.author.date
+				const date = new Date(commits[0].commit.author.date)
 
 				const history = document.getElementById('history')
-				history.innerHTML = date 
+				history.innerHTML = date.toLocaleString('default', {day: 'numeric', month: 'long', year: 'numeric'})
 			}	
 		}
 	}

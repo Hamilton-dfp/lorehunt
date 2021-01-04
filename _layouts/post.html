@@ -2,25 +2,16 @@
 layout: default
 ---
 
-
-
-{% assign repo = site.github.public_repositories | where: "name", "lorehunt" | first %}
-
-<ul>
-	{% for commit in repo.commits %}
-	<li>{{ repo.name }}: {{ commit.commit_message }}</li>
-	{% endfor %}
-</ul>
-
+<h1 class='title'>{{ page.title }}</h1>
 {% include revision.html %}
-
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-<h1>{{ page.title }}</h1>
-
-<p class="view">by {{ page.author | default: site.author }}</p>
-
-{{content}}
-
 {% if page.tags %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small><br><br>
 {% endif %}
+
+<div class='post-content'>
+	{{content}}
+</div>
+
+<div>
+	Have feedback? Continue the discussion on <a href="{{ site.github.repository_url }}/issues/new">GitHub</a>
+</div>
