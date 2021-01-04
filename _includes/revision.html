@@ -6,30 +6,28 @@
 
 	xhr.open('GET', url);
 	xhr.send();
-	xhr.onreadystatechange = function () {
-		var commits;
-		if (xhr.readyState !== 4 || xhr.status !== 200) return;
+	xhr.onreadystatechange = setDate()
 
-		commits = JSON.parse(xhr.responseText);
-		if (commits && commits.length) {
-			date = commits[0].commit.author.date
+	function setDate(callback) {
+		return function() {
+			var commits;
+			if(xhr.readyState !== 4 || xhr.status != 200) return
+
+			commits = JSON.parse(xhr.responseText)
+			if(commits && commits.length) {
+				date = commits[0].commit.author.date
+			}	
+
+			if(callback)
+				callback()
 		}
-	};
+	}
 
 	function setHistory() {
-		if(xhr.readState !== 4)
-			xhr.onreadystatechange = setHistory
-		else {
-			if(xhr.status == 200) {
-				commits = JSON.parse(xhr.responseText);
-				if (commits && commits.length) {
-					date = commits[0].commit.author.date
-
-					var history = document.getElementById('history')
-					history.innerHTML = date 
-				}
-			}
- 		}
+		if(xhr.readState == 4 && xhr.state == 200) {
+			var history = document.getElementById('history')
+			history.innerHTML = date 
+		} else xhr.onreadstate = setDate(setHistory)
 	}
 </script>
 
