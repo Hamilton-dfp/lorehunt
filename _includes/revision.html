@@ -1,43 +1,27 @@
-<script>
-	let date
+<div id="history">
+test
+</div>
 
-	var url = 'https://api.github.com/repos/Hamilton-DFP/lorehunt/commits?path=_posts/2021-01-03-Test.md'
-	var xhr = new XMLHttpRequest();
+<script>
+	const url = 'https://api.github.com/repos/Hamilton-DFP/lorehunt/commits?path=_posts/2021-01-03-Test.md'
+	const xhr = new XMLHttpRequest();
 
 	xhr.open('GET', url);
 	xhr.send();
 	xhr.onreadystatechange = setDate()
 
-	function setDate(callback) {
+	function setDate() {
 		return function() {
-			var commits;
+			let commits;
 			if(xhr.readyState !== 4 || xhr.status != 200) return
 
 			commits = JSON.parse(xhr.responseText)
 			if(commits && commits.length) {
-				date = commits[0].commit.author.date
-				console.log(`date = ${date}`)
-			}	
+				const date = commits[0].commit.author.date
 
-			if(callback)
-				callback()
+				const history = document.getElementById('history')
+				history.innerHTML = date 
+			}	
 		}
 	}
-
-	function setHistory() {
-		console.log('history')
-		if(xhr.readyState == 4 && xhr.status == 200) {
-			console.log('setting history')
-			var history = document.getElementById('history')
-			history.innerHTML = date 
-		} else xhr.onreadystatechange = setDate(setHistory)
-	}
-</script>
-
-<div id="history" onload='setHistory()'>
-test
-</div>
-
-<script>
-  
 </script>
