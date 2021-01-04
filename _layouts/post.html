@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign repo = site.github.public_repositories | where "name", "lorehunt" | first %}
+{% assign repo = site.github.public_repositories | where: "name", "lorehunt" | first %}
 
 <ul>
 	<li>{{ repo.name }}</li>
