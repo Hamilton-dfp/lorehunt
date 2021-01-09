@@ -1,10 +1,23 @@
+plugins:
+  - jekyll-gihub-metadata
+
 title: Lore Hunt
 theme: jekyll-theme-minimal
 
-permalink: /news/:year-:month-:day/:title
+repository: Hamilton-dfp/lorehunt
 
 defaults:
   - scope:
       path: lore
     values:
-      permalink: /lore/:title
+      layout: default
+      lorehunt:
+        page-type: page
+        include: page.html
+  - scope:
+      path: posts
+    values:
+      layout: default
+      lorehunt:
+        page-type: page
+        include: page.html

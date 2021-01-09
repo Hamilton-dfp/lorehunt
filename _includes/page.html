@@ -1,0 +1,21 @@
+<h1 class='title'>{{ page.title }}</h1>
+{% include revision.html %}
+{% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small><br><br>
+{% endif %}
+
+<div class='content-wrapper'>
+  {% if page.lorehunt.quote %}
+  <blockquote>
+    {{ page.lorehunt.quote.content }}<small>{{ page.lorehunt.quote.source }}</small>
+  </blockquote>
+  {% endif %}
+
+  <div class='post-content'>
+    {{content}}
+  </div>
+
+  <div>
+    Have feedback? Continue the discussion on <a href="{{ site.github.repository_url }}/issues/new">GitHub</a>
+  </div>
+</div>

@@ -3,6 +3,187 @@
 
 @import "jekyll-theme-minimal";
 
+header.home {
+	display: block;
+	position: static;
+	margin-bottom: 20px;
+	float: none;
+	width: 100%;
+}
+
+nav {
+	border: 1px solid #e5e5e5;
+	border-width: 1px 0 0 0;
+	margin-top: 10px;
+}
+
+section.home {
+  float: none;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 20px 0 0 0;
+  border: 1px solid #e5e5e5;
+  border-width: 2px 0;
+}
+
+footer {
+	position: static;
+	width: 99%;
+	border: 1px solid #e5e5e5;
+	border-width: 1px 0;
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+
+footer div {
+	width: 99%;
+	margin: 20px 0;
+	display: inline-block;
+}
+
+footer div div {
+	height: fit-content;
+	width: 33%;
+	margin: 2px, 2px;
+	border-width: 0px;
+}
+
 h1.title {
 	margin-bottom: 0px;
+}
+
+.in-header {
+	display: block;
+	background: #FFF;
+	border: 0;
+	width: auto;
+	float: none;
+	height: fit-content;
+	position: static;
+}
+
+ul.in-header {
+	margin: 10px 0 0 10px;
+}
+
+li.in-header {
+	text-align: left;
+}
+
+h2.in-header {
+	color: #267CB9;
+}
+
+a.nav-header {
+	text-align: left;
+	margin: 2px 0px 5px 20px;
+	font-size: 16px;
+	color: #267CB9;
+	font-weight: bold;
+}
+
+a.nav-header:hover, a.nav-header:focus {
+	color: #069; 
+	font-weight: bold;
+}
+
+h2.in-header {
+	margin-bottom: 5px;
+}
+
+div.home {
+	border: 1px solid #e5e5e5;
+	border-width: 1px 0 0 0;
+	margin-bottom: 20px;
+}
+
+div.home div {
+	margin: 10px 0 20px;
+}
+
+blockquote {
+	margin: 10px 30px 20px 20px;
+}
+
+blockquote small {
+	font-weight: bold;
+}
+
+a.home {
+	font-size: 20px;
+	font-weight: bold;
+	background: #267CB9;
+	color: #FFF;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+div.home div.center {
+	text-align: center;
+	height: fit-content;
+	margin: 10px 0;
+}
+
+.not-home {
+	display: none;
+}
+
+div.content {
+  margin-top: 20px;
+}
+
+li.page-list {
+  list-style: none;
+  border: 1px solid #e5e5e5;
+  border-width: 1px 0 0 0;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+li.page-list a {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+li.page-list div.title {
+  margin-bottom: 10px;
+}
+
+div.content-wrapper {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+	header { 
+		padding-right: 0; 
+		display: block; 
+		position: static 
+	}
+
+	footer {
+	  border-width: 0;
+	  margin-top: 0;
+	}
+
+	footer div {
+	  display: block;
+	}
+
+	footer div div {
+		width: auto;
+	}
+}
+
+@media screen and (min-width: 480px) { }
+
+@media screen and (max-width: 480px) { 
+	.not-mobile { 
+		display: none; 
+	} 
 }

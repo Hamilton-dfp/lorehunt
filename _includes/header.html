@@ -1,0 +1,32 @@
+<header {% if page.lorehunt.page-type %}class='{{ page.lorehunt.page-type }}'{% endif %}>
+  <div>
+    <h1 class="in-header"><a href="{{ '/' | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+  
+    {% if site.logo %}
+      <img src="{{site.logo | relative_url}}" alt="Logo" />
+    {% endif %}
+  </div>
+
+  <div class='in-header not-mobile'>{{ site.description | default: site.github.project_tagline }}</div>
+
+  <nav {% if page.lorehunt.include == 'home.html' %}class='not-home'{% endif %}>
+    <ul class='in-header'>
+      <li class='in-header'>
+        <a class='nav-header' href="{{ '/news' | relative_url }}">News</a>
+      </li>
+      {% for page in site.posts %}
+        <li class='hidden in-header not-mobile'>
+          <a class='in-header' href='{{ page.url | relative_url }}'>{{ page.title }}</a>
+        </li>
+      {% endfor %}
+      <li class='in-header'>
+        <a class='nav-header' href="{{ '/topics' | relative_url }}">Topics</a>
+      </li>
+      {% for page in site.pages %}
+        <li class='hidden in-header not-mobile'>
+          <a href='{{ page.url | relative_url }}'>{{ page.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
