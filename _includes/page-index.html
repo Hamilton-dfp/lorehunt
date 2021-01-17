@@ -2,7 +2,7 @@
 
 <div class="content">
 	<ul>
-	{% assign pages = site.pages | where: 'dir', page.lorehunt.index.dir %}
+	{% assign pages = site.pages | where: 'dir', page.lorehunt.index.dir | sort: 'date' | reverse %}
   {% for page in pages %}
 		<li class='page-list'>
       <div class='title'>
