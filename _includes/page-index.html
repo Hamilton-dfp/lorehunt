@@ -9,7 +9,7 @@
         <a href='{{ page.url | relative_url }}'>{{page.title}}</a>
         {% include revision.html %}
       </div>
-      <div>{{ page.content | strip_html | truncatewords: 100 }}</div>
+      <div>{{ page.content | strip_html | truncatewords: 35 }}</div>
     </li>
 	{% endfor %}
 	</ul>
