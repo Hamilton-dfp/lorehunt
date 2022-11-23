@@ -52,7 +52,7 @@ This essay explores the lore behind the death and revival cycle of Bloodborne. I
 
 ## The Ebrietas Paradox
 
-> Making contact with eldritch wisdom is a blessing, for even if it drives on mad, it allows one to serve a grander purpose, for posterity. <small>Madman's Knowledge</small
+> Making contact with eldritch wisdom is a blessing, for even if it drives on mad, it allows one to serve a grander purpose, for posterity. <small>Madman's Knowledge</small>
 
 Lorehunt assumes the theory that all Great Ones in Bloodborne are unique to their respective realities. For example, Rom the Vacuous Spider is encountered within the Chalice Dungeons as well as under the lake at Byrgenwerth. Unlike bosses like the Watchdog or the Undead Giant, Rom has a proper name, suggesting there is only one Rom that exist in that reality, and it is encountered multiple times. This paradigm will be explored in future essays, but assuming this theory is true presents lore hunters with a paradox. 
 
